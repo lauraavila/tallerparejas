@@ -31,6 +31,22 @@ define(['controller/_refereeController','delegate/refereeDelegate'], function() 
     App.Controller.RefereeController = App.Controller._RefereeController.extend({
           language: function(){
             alert('Usted está viendo la versión en ESPAÑOL de esta página');
+        },
+        clasification: function (params)
+        {
+            var x = parseInt(params.ageOfExperience);
+            if (x<=2)
+            {
+                alert('es un Novato');
+            }
+            if (x>2 && x<7)
+            {
+                alert('es Competente');
+            }
+            if( x=>7)
+            {
+                alert('es Experto');
+            }
         }
 
     });

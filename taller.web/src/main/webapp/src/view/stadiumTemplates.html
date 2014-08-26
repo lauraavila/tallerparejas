@@ -7,7 +7,9 @@
 		 <th>Name</th>
 		 <th>Capacity</th>
 		 <th>City Id</th>
+                 
     <th>Actions</th>
+    <th>Clasification</th>\n\
     </tr>
     </thead>
     <tbody>
@@ -23,6 +25,10 @@
 	<% if(showDelete) {%>
     <a onclick="Backbone.trigger('<%= componentId %>-stadium-delete',{id:<%= stadium.id %>}); return false" >Delete</a> 
 	<% } %>    
+	</td>
+ <td>
+        <a onclick="Backbone.trigger('<%= componentId %>-stadium-show-clasification',{capacity:<%=htmlEncode(stadiume.getDisplay('capacity')) %>}); return false" >Clasification</a>
+   <% } %>    
 	</td>
     </tr>
     <% }); %>

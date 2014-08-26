@@ -1,5 +1,4 @@
-<script type="text/template" id="refereeList">
-    <div class="panel panel-default">
+ <div class="panel panel-default">
     <!-- Default panel contents -->
     <table class="table striped">
     <thead>
@@ -11,7 +10,9 @@
 		 <th>Birth Date</th>
 		 <th>Enable</th>
 		 <th>Doc Number</th>
-    <th>Actions</th>
+                 
+    <th>Actions</th>\n\
+    <th> Clasification</th>
     </tr>
     </thead>
     <tbody>
@@ -24,6 +25,7 @@
 		<td><%= htmlEncode(referee.getDisplay('birthDate')) %></td>
 		<td><%= htmlEncode(referee.getDisplay('enable')) %></td>
 		<td><%= htmlEncode(referee.getDisplay('docNumber')) %></td>
+                
     <td>
     <% if(showEdit) {%>
     <a onclick="Backbone.trigger('<%= componentId %>-referee-edit',{id:<%= referee.id %>}); return false" >Edit</a> |
@@ -32,7 +34,11 @@
     <a onclick="Backbone.trigger('<%= componentId %>-referee-delete',{id:<%= referee.id %>}); return false" >Delete</a> 
 	<% } %>    
 	</td>
-    </tr>
+        <td>
+        <a onclick="Backbone.trigger('<%= componentId %>-referee-show-clasification',{ageOfExpirience:<%=htmlEncode(referee.getDisplay('ageOfExpirience')) %>}); return false" >Clasification</a>
+   <% } %>    
+	</td>
+                </tr>
     <% }); %>
     </tbody>
     </table>
